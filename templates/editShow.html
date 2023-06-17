@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='edit.css') }}">    
+
+    <title>Edit Page</title>
+</head>
+<body>
+    <div class="cssWrapper">
+        <h1>Edit {{show.title}}</h1>
+        
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div class="wrapper">
+    <form action="/{{show.show_id}}/updateShow" method="POST">
+        <!-- <input type="hidden" name='which_form' value='edit_show'> -->
+        Title: <input type="text" name="title" value="{{show.title}}">
+        Network: <input type="text" name="network" value="{{show.network}}">
+        Realease Date: <input type="date" name="release_date" value="{{show.release_date}}">
+        Description: <textarea name='description' cols="30" rows="10">{{show.description}}</textarea>
+        <input type="submit">
+        </form>
+        <a id="a1" href="/dashboard">Tv Shows</a>
+        <a id="a2" href="/logout">Logout</a></div>
+    </div>
+</body>
+</html>

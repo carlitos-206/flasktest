@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='show.css') }}">    
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <div class="content"><div>
+    <table>{% for this_show in show%}
+        <th>{{this_show.title}}</th>
+        <tr>
+            <td>Network:</td>
+        </tr>
+        <tr></tr>
+        <tr><td id="td1">{{this_show.network}}</td></tr>            
+        <tr></tr>
+        <tr>
+            <td>Realease Date:</td>
+        </tr>
+        <tr></tr>    
+        <tr>
+            <td id="td2">{{this_show.release_date}}</td>
+        </tr>
+        <tr>    
+        <td>Description:</td>
+        </tr>
+        <tr>
+        <tr>
+            <td id="td3">{{this_show.description}}</td>
+        </tr>
+        <tr> owner name {{user}}</tr>
+        {%endfor%}
+        </tr>
+        <a id="a1"href="/logout">logout</a>
+        <a id="a2"href="/dashboard">TV Shows</a>
+    </table>
+    </div>
+</body>
+</html>

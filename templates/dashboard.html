@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dashboard.css') }}">    
+
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="a">
+        <div id="circle"></div>
+    <div class="wrapper">
+        <div class="head">
+            <h1>Howdy {{user.first_name}}</h1>
+            <a id="tag1"href="/logout">logout</a>
+        </div>
+        <table>
+            <th>All TV Shows</th>
+            <tr>
+                <td class="maintr">Title</td>
+                <td class="maintr">Network</td>
+                <td class="maintr">Realease Date</td>
+                <td class="maintr">Actions</td>
+            </tr>
+            {% for one_show in all_shows %}
+            <tr>
+                <td>{{one_show['title']}}</td>
+                <td>{{one_show['network']}}</td>
+                <td>{{one_show['release_date']}}</td>
+                <td><a href="/show/{{one_show.show_id}}">Show</a> | <a href="/{{one_show.show_id}}/editShow">Edit</a> | <a href="/delete/{{one_show.show_id}}">Delete</a></td>
+            </tr>
+            {%endfor%}
+        </table>
+        <a id="tag2" href="/newShow">Add new show</a>
+        <div>
+            {%for one_user in all_users%}
+            <p>first name {{one_user['first_name']}}</p>
+            {%endfor%}
+        </div>
+        
+
+    </div></div>
+</body>
+</html>

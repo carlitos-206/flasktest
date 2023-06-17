@@ -1,0 +1,80 @@
+*{
+    padding:0px;
+    margin:0px;
+    /* outline: solid green 3px; */
+}
+.register{
+    width: 500px;
+    height: 500px;
+    position: relative;
+    top: 25px;
+    left: 10px;
+    outline: green 2px solid;
+}
+.register_form{
+    align-content: center;
+    height: 500px;
+}
+#register1{
+    position: relative;
+    left: 15px;
+    top: 70px;
+}
+#register2{
+    position: relative;
+    margin-top: 80px;
+    left: 8px;
+    width: fit-content;
+    padding: 10px;
+}
+#register3{
+    position: relative;
+    left: 50px;
+}
+#register4{
+    position: relative;
+    left:21px;
+    top: 10px;
+}
+#register5{
+    position: relative;
+    left: 5px;
+    top: 18px;
+}
+#register_btn{
+    position: relative;
+    left: 310px;
+}
+.login{
+    width: fit-content;
+    height: 100px;
+    position: relative;
+    left:550px;
+    bottom: 400px;
+}
+.flash{
+    width: fit-content;
+    position: relative;
+    left: 550px;
+    bottom: 300px;
+}
+
+/* Open source background */
+
+body {
+	background: linear-gradient(-45deg, #ff0000, #ffffff, #000000, #f20808);
+	background-size: 400% 400%;
+	animation: gradient 7s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
